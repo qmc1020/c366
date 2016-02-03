@@ -1,0 +1,20 @@
+The before value of the fourth point should be nonzero (why?)
+
+This is because the fourth point shares indices in 6 of the tilings with the second point. Since the second point already had some learning done for those indices, the weights corresponding to them would not be zero when we come to the fourth point, therefore the calculation for the before value of the fourth point involves nonzero weights for six of the indices.
+
+
+You should see the MSE coming down smoothly from about 0.25 to almost 0.01 and staying there (why does it not decrease further towards zero?)
+
+This is because of the noise term in the target function i.e. N(0,0.1). This randomly generated number from the normal distribution added to the target function causes the mean squared error to be stuck at around 0.01 because the random variation makes the learnt function and target function to differ a little even if quite a high number of examples have been used for training. If we remove the noise from the target funciton, we will see that MSE keeps reducing smoothly and goes significantly lower than the previous final MSE after 10000 examples.
+
+The estimated MSE:  0.240021622139
+The estimated MSE:  0.049868005851
+The estimated MSE:  0.0124422972824
+The estimated MSE:  0.00456420465634
+The estimated MSE:  0.00295024253661
+The estimated MSE:  0.00185704140689
+The estimated MSE:  0.00133297342154
+The estimated MSE:  0.000966546894391
+The estimated MSE:  0.000889371622482
+The estimated MSE:  0.000818018236908
+The estimated MSE:  0.00074997165687

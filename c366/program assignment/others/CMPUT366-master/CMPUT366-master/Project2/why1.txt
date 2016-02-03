@@ -1,0 +1,49 @@
+
+PART1: WHYs
+
+1) “the tiles in the first tiling will run from 0 to 120, and the tiles in the second tiling will run from 121 to 241 (why?)”
+
+That’s because each tiling is 11x11 grid, thus the firs tiling will consist of (11x11=121 tiles) runs from (0-120).
+and the second one, will continue starting at 121 and ends at 121 + (11x11=121)-1 =241, so it runs from (121-241).
+
+—————————————————————————————————
+2) “(0.1,0.1), will be in the first tile of the first seven tilings, that is, in tiles 0, 121, 242, 363, 484, 605, 726 (why?)”
+
+Each tile is 0.6x0.6 in size. Which means in the first tiling (0.1,0.1) is in the first tile i.e. 0. The first tiles (bottom left) of the 2nd through 7th tilings also contain the point (0.1,0.1) because even though the tilings move down and left by 0.6/8, the point (0.1,0.1) remains within in the first tile. The right edge of the first tile of the seventh tiling has been moved 6*(0.6/8) = 0.45 to the left of the right edge of the first tile of the first tiling. Which means it is at 0.6-0.45 = 0.15. Similarly the top edge is also at 0.15.
+
+Since the top right corner of the first tile of the seventh tiling is (0.15,0.15), and that of the first tile of the first tiling is (0.6,0.6), it means that for the first seven tilings, the point (0.1,0.1) is within the first tile.
+
+The first tile of each of the seven tilings corresponds to the numbers 0, 121, 242, 363, 484, 605, 726 because given that we are starting at zero and each tiling has 121 tiles:
+
+0
+121 + 0 = 121
+121 + 121 = 242
+121 + 242 = 363
+121 + 363 = 484
+121 + 484 = 605
+121 + 605 = 726
+
+...
+That’s because each tile is 0.6x0.6 in size, and each subsequent tilings will be offset by -1/8*0.6 in each direction, so for the first 7 tilings, their first tile will be still in …. 0,121,242,363,484,605,726 all are multiply of 121 which showes that their first tile will be
+...
+
+—————————————————————————————————
+3) “In the eighth tiling  this  point  will  be  in  the  13th  tile  (why?) which  is  tile  859  (why?)”
+
+The 8th tiling has been moved down and left each by an offset of 7*(0.6/8) = 0.525 compared to the first tiling which means the top right corner of the first tile is at (0.6-0.525, 0.6-0.525) = (0.075, 0.075). This means the point (0.1,0.1) is no longer in the first tile. It should be just above the first row and to the right of first column which places it in the 13th tile.
+
+—————————————————————————————————
+4) “which  is  tile  859  (why?)”
+
+the first tile in the 8th tiling start at index 847 (121*7), so 847+13-1 =859
+
+—————————————————————————————————
+5) “The largest possible tile index is 967 (why?)”
+
+because there is 8 tilings, the 8th tiling will start at (121*(8-1))=847 and ends at (847+120)= 967 which is the largest possible tile.
+the 8th tiling runs from (847-967)
+
+—————————————————————————————————
+6) “the second and fourth examples should produce very similar sets of indices (they should have many tiles in common) (why?)”
+
+Because the values of x  are the same in both example and y values are very close (y=2 and y=2.1), so the distance between them is smaller than the size of the tile.
